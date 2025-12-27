@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+<style>
+    .allura-regular {
+        font-family: "Allura", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .news-cycle-regular {
+        font-family: "News Cycle", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .news-cycle-bold {
+        font-family: "News Cycle", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+</style>
+
+
+<body>
+    <div class="flex justify-center gap-16 p-2 border border-gray-300 tracking-wider">
+        <p>Find a doctor</p>
+        <p>Investors</p>
+        <p>About us</p>
+        <p>Careers</p>
+        <p>CSR</p>
+        <p>Contact us</p>
+    </div>
+
+    <header class="w-full h-28 bg-green-700/80 flex items-center justify-between">
+        <div>
+            <h1 class="text-white text-2xl font-semibold font-serif ml-10">Welcome, <span class="text-yellow-400">
+                    <%= patientName %>
+                </span></h1>
+        </div>
+        <div class="flex gap-7 text-white font-semibold ">
+            <a href="/patient" class="hover:underline">Home</a>
+            <a href="/appointments" class="hover:underline">Appointments</a>
+            <a href="/history" class="hover:underline">Medical history</a>
+            <a href="/contact" class="hover:underline">Contact</a>
+        </div>
+        <div class="mr-10">
+            <a href="/profile" class="bg-yellow-400 p-2 rounded-lg hover:bg-yellow-500 font-semibold mr-5">Profile</a>
+            <a href="/logout" class="text-white text-xl hover:text-gray-200">➜]</a>
+        </div>
+
+    </header>
+
+    <div
+        class="flex justify-center gap-16 p-2 border border-gray-300 font-semibold bg-gray-50 shadow-lg items-center tracking-wider">
+        <p><i class="fa-solid fa-phone"></i> Request a Callback</p>
+        <div class="p-2 pl-4 pr-4 bg-orange-100 rounded-3xl hover:bg-orange-300">
+            <p><i class="fa-solid fa-calendar-days"></i> Book Appointment</p>
+        </div>
+        <p><i class="fa-solid fa-stethoscope"></i> Get Health Checkup</p>
+    </div>
+
+    <div class="relative w-full h-[500px] overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center blur-sm"
+            style="background-image: url('https://plus.unsplash.com/premium_vector-1682270091935-677cd4ff2f4e?q=80&w=3520&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        </div>
+        <div class="absolute inset-0 bg-white/40"></div>
+        <div class="relative z-10 h-full flex flex-col px-10 text-black items-center">
+            <div class="w-[750px] p-10 flex flex-col items-center bg-white/70 capitalize mt-10">
+                <h1 class="text-5xl font-semibold tracking-widest">Healthcare for Good</h1>
+                <h1 class="text-5xl font-semibold tracking-widest">Today. Tomorrow. Always</h1>
+            </div>
+            <div class="flex w-[1000px] border rounded-lg overflow-hidden mt-16">
+                <input type="search" placeholder="Search for Doctors, Specialists and Medicines" class="flex-1 p-6" />
+                <button class="px-4 bg-white border-r-lg">
+                    <i class="fa-solid fa-magnifying-glass text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="w-full h-[350px] flex items-center justify-center">
+        <div class="w-[650px] h-[300px] flex flex-col p-4 gap-4">
+            <div class=" h-1/2 flex gap-2">
+                <a class="border-2 border-green-200 w-1/2 bg-green-50 p-3 flex gap-2 rounded-lg overflow-hidden"
+                    href="/appointments">
+                    <div class="flex flex-col justify-center">
+                        <h1 class="text-2xl font-bold">Book an Appointment</h1>
+                        <p class="text-md">With country's leading experts</p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-regular fa-calendar-days text-4xl text-green-500"></i>
+                    </div>
+                </a>
+                <a class="border-2 border-blue-200 w-1/2 bg-blue-50 p-3 flex gap-5 rounded-lg overflow-hidden"
+                    href="/appointments">
+                    <div class="flex flex-col justify-center">
+                        <h1 class="text-2xl font-bold">Hospitals</h1>
+                        <p class="text-md">Health needs under one roof</p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-bed text-4xl text-blue-500"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="h-1/2 flex gap-2">
+                <a class="border-2 border-purple-200 w-1/2 bg-purple-50 p-3 flex gap-10 rounded-lg overflow-hidden"
+                    href="/appointments">
+                    <div class="flex flex-col justify-center">
+                        <h1 class="text-2xl font-bold">Specialities</h1>
+                        <p class="text-md">Our expertise in healthcare</p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-hand-holding-heart text-4xl text-purple-500"></i>
+                    </div>
+                </a>
+                <a class="border-2 border-orange-200 w-1/2 bg-orange-50 p-3 flex gap-10 rounded-lg overflow-hidden"
+                    href="/appointments">
+                    <div class="flex flex-col justify-center">
+                        <h1 class="text-2xl font-bold">Doctors</h1>
+                        <p class="text-md">Top exprets for your health</p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-user-doctor text-4xl text-orange-500"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="w-[600px] h-[300px] flex flex-col gap-2 p-2 pl-10">
+            <h1 class="text-3xl ">We can help you book</h1>
+            <div class="flex gap-2 w-full h-2/3 p-3">
+                <div
+                    class="border border-green-300/50 w-1/2 h-full flex flex-col items-center justify-center rounded-lg shadow-sm">
+                    <img src="/icons/doc.png" alt="Doctor" class="w-20 h-20" />
+                    <h1 class="font-semibold tracking-wider text-xl">Health Checkups</h1>
+                </div>
+                <div
+                    class="border border-green-300/50 shadow-sm rounded-lg w-1/2 h-full flex flex-col items-center justify-center">
+                    <img src="/icons/image.png" alt="Doctor" class="w-20 h-20" />
+                    <h1 class="font-semibold tracking-wider text-xl">Tests & Services</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full mt-16 h-96  pl-36 pr-36 flex gap-5 ">
+        <div class=" w-2/5  h-full flex flex-col justify-center items-center gap-5">
+            <h1 class="text-4xl font-semibold tracking-wider">Breakthrough Cases</h1>
+            <button class=" p-2 pl-4 pr-4 border-2 border-orange-400 rounded-lg ">View All</button>
+            <p class="text-gray-500">Swipe right for more news...<i class="fa-solid fa-arrow-right"></i></p>
+        </div>
+        <div class="relative w-3/5 h-96 rounded-lg overflow-x-auto overflow-y-hidden
+            flex snap-x snap-mandatory scroll-smooth shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)]"">
+            <% healthArticles.forEach(article=> { %>
+                <div class=" min-w-full h-full flex snap-center">
+
+            <div class="w-1/2 h-full p-6">
+                <h1 style="font-family: 'News Cycle'" class="text-3xl tracking-wide font-semibold">
+                    <%= article.title %>
+                </h1>
+
+                <p class="mt-5 text-gray-500">
+                    <%= article.content ? article.content.slice(0, 200) : article.description %>...
+                        <a href="<%= article.url %>" target="_blank" class="text-blue-500 font-cursive">
+                            Read More
+                        </a>
+                </p>
+            </div>
+
+            <div class="w-1/2 h-full overflow-hidden">
+                <% if (article.urlToImage) { %>
+                    <img src="<%= article.urlToImage %>" class="w-full h-full object-cover" alt="">
+                    <% } %>
+            </div>
+
+        </div>
+        <% }) %>
+
+    </div>
+
+
+    </div>
+
+
+    <div class="w-full mt-16 h-96  pl-36 pr-36 flex gap-5 "">
+        <div class=" w-2/5 h-full flex flex-col justify-center items-center gap-5">
+        <h1 class="text-4xl font-semibold tracking-wider">Our Patient's Stories</h1>
+        <button class=" p-2 pl-4 pr-4 border-2 border-orange-400 rounded-lg ">View All</button>
+        <p class="text-gray-500">Swipe right for more..<i class="fa-solid fa-arrow-right"></i></p>
+    </div>
+    <div class="w-3/5">
+        <div class="max-w-6xl mx-auto bg-white rounded-3xl p-10 flex gap-12 bg-white rounded-3xl p-10
+            shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)]">
+
+
+            <div class="relative w-1/3 flex items-center justify-center">
+
+
+                <div class="absolute -top-2 -left-2 text-[80px] leading-none text-[#e6c7bb] font-serif">
+                    “
+                </div>
+
+
+                <div class="w-64 h-64 rounded-full border-4 border-[#e6c7bb] flex items-center justify-center relative">
+
+                </div>
+            </div>
+
+
+            <div class="w-2/3 flex flex-col justify-between">
+
+                <p class="text-gray-800 text-lg leading-relaxed">
+                    Mr. Pandey's persistent knee pain was relieved after a successful
+                    partial knee replacement surgery by Dr. Harish Ghoota-Director of
+                    Orthopaedics at Fortis Escorts Hospital. Now, he's active and pain-free,
+                    thanks to Dr. Ghoota's expertise and the hospital's dedicated team.
+                </p>
+
+                <div class="mt-8 text-gray-500 text-sm">
+                    Jeevan Jyoti Hospital
+                </div>
+
+                <div class="self-end text-[80px] leading-none text-[#e6c7bb] font-serif">
+                    ”
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+    <footer class="bg-slate-900 text-gray-300 pt-12 pb-6 mt-20">
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+
+            <div>
+                <h2 class="text-white text-2xl font-semibold mb-4">
+                    <i class="fa-solid fa-hospital"></i> Jeevan Jyoti Hospital
+                </h2>
+                <p class="text-sm leading-relaxed">
+                    Providing trusted healthcare services with advanced medical technology,
+                    compassionate doctors, and patient-first care.
+                </p>
+            </div>
+
+
+            <div>
+                <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">About Us</a></li>
+                    <li><a href="#" class="hover:text-white">Departments</a></li>
+                    <li><a href="#" class="hover:text-white">Doctors</a></li>
+                    <li><a href="#" class="hover:text-white">Appointments</a></li>
+                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h3 class="text-white font-semibold mb-4">Our Services</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Emergency Care</li>
+                    <li>Orthopaedics</li>
+                    <li>Cardiology</li>
+                    <li>Neurology</li>
+                    <li>Diagnostics</li>
+                </ul>
+            </div>
+
+
+            <div>
+                <h3 class="text-white font-semibold mb-4">Contact Us</h3>
+                <ul class="space-y-3 text-sm">
+                    <li>
+                        <i class="fa-solid fa-location-dot mr-2 text-blue-400"></i>
+                        Faridabad, Haryana, India
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone mr-2 text-green-400"></i>
+                        +91 98765 43210
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope mr-2 text-yellow-400"></i>
+                        care@lifecarehospital.com
+                    </li>
+                </ul>
+
+
+                <div class="flex gap-4 mt-5 text-lg">
+                    <a href="#" class="hover:text-blue-500"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-pink-500"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-blue-600"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="border-t border-slate-700 mt-10 pt-4 text-center text-sm text-gray-400">
+            © 2025 Jeevan Jyoti Hospital. All rights reserved.
+        </div>
+
+    </footer>
+
+
+
+
+
+
+    <!-- <div class="items-center justify-center flex w-full mt-5 flex-col">
+        <h1 class="tracking-widest text-blue-900 text-7xl uppercase font-['Montserrat'] font-bold">Jeevan Jyoti Hospital
+        </h1>
+        <p class="font-['Playfair Display'] italic text-4xl tracking-widest" style="font-family: 'Allura">"Because every
+            life matters"</p>
+    </div>
+
+    <div class="w-full h-96 p-5 flex gap-3">
+        <div class="h-96 w-1/3 relative overflow-hidden hover:scale-105">
+
+            <img class="w-full h-full object-cover"
+                src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg"
+                alt="">
+            <div class="absolute inset-0 flex justify-center items-center bg-black/40">
+                <h1 class="text-white text-3xl font-bold">
+                    Dr. Chusta
+                </h1>
+            </div>
+
+        </div>
+
+        <div class="h-96 w-1/3 relative overflow-hidden hover:scale-105">
+
+            <img class="w-full h-full object-cover"
+                src="https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9jdG9yfGVufDB8fDB8fHww"
+                alt="">
+            <div class="absolute inset-0 flex justify-center items-center bg-black/40">
+                <h1 class="text-white text-3xl font-bold">
+                    Dr. Raghvendra
+                </h1>
+            </div>
+
+        </div>
+        <div class="h-96 w-1/3 relative overflow-hidden hover:scale-105">
+
+            <img class="w-full h-full object-cover"
+                src="https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*"
+                alt="">
+            <div class="absolute inset-0 flex justify-center items-center flex-col bg-black/40">
+                <h1 class="text-white text-3xl font-bold">
+                    Dr. Adarsh
+                </h1>
+                <button class="p-2 bg-yellow-500 text-black rounded-lg ">Book Appontment</button>
+            </div>
+
+        </div>
+    </div> -->
+</body>
+
+</html>

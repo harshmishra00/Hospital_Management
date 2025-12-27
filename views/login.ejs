@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full h-screen bg-zinc-800 flex justify-center items-center font-serif flex-col gap-6">
+        <div class="">
+            <h1 class="text-4xl text-white font-semibold">Welcome to our Hospital</h1>
+        </div>
+        
+        <form action="/login" method="post" class="bg-zinc-600 w-96 h-auto flex flex-wrap gap-6 p-10 rounded-2xl items-center justify-center">
+            <h1 class="font-semibold text-white text-3xl underline">Login Patient</h1>
+    
+            <div class="w-full">
+                <label for="email">Email: </label>
+                <input type="email" class="p-2 w-full rounded-lg bg-zinc-300" name="email">
+            </div>
+
+            <div class="w-full">
+                <label for="password">Password:</label>
+                <input type="password" class="p-2 w-full rounded-lg bg-zinc-300" name="password">
+            </div>
+
+            <button class="p-2 w-28 rounded-xl bg-blue-500">Login</button>
+        </form>
+
+    </div>
+</body>
+
+</html>

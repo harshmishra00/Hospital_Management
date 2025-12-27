@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Prata&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Prata&family=Unkempt:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Licorice&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    .prata-regular {
+        font-family: "Prata", serif;
+        font-weight: 400;
+    }
+
+    .vast-shadow-regular {
+        font-family: "Vast Shadow", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    .unkempt-regular {
+        font-family: "Unkempt", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .unkempt-bold {
+        font-family: "Unkempt", cursive;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .kranky-regular {
+        font-family: "Kranky", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .cedarville-cursive-regular {
+        font-family: "Cedarville Cursive", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .licorice-regular {
+        font-family: "Licorice", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+
+
+<body class="bg-gray-300">
+    <div class="flex justify-center gap-16 p-2 border border-gray-300 tracking-wider">
+        <p>Find a doctor</p>
+        <p>Investors</p>
+        <p>About us</p>
+        <p>Careers</p>
+        <p>CSR</p>
+        <p>Contact us</p>
+    </div>
+    <header class="w-full h-28 bg-green-900 flex items-center justify-between">
+        <h1 class="text-white text-2xl font-semibold font-serif ml-10">User Profile</h1>
+        <div class="flex gap-7 text-white font-semibold ">
+            <a href="/patient" class="hover:underline">Home</a>
+            <a href="/appointments" class="hover:underline">Appointments</a>
+            <a href="/history" class="hover:underline">Medical history</a>
+            <a href="/contact" class="hover:underline">Contact</a>
+        </div>
+        <div class="mr-10">
+        </div>
+    </header>
+    <div
+        class="flex justify-center gap-16 p-2 border border-gray-300 font-semibold bg-gray-50 shadow-lg items-center tracking-wider">
+        <p><i class="fa-solid fa-phone"></i> Request a Callback</p>
+        <div class="p-2 pl-4 pr-4 bg-orange-100 rounded-3xl hover:bg-orange-300">
+            <p><i class="fa-solid fa-calendar-days"></i> Book Appointment</p>
+        </div>
+        <p><i class="fa-solid fa-stethoscope"></i> Get Health Checkup</p>
+    </div>
+    <div class=" p-5 flex justify-between">
+        <div class="w-1/2">
+            <div class="w-full">
+                <h1 style="font-family: 'Vast Shadow" class="text-7xl">
+                    <%=patient.name%> <span class="text-black">,</span>
+                </h1>
+            </div>
+            <div style="font-family: 'Unkempt" class=" p-4 mt-10 text-2xl">
+                <h1>Email: <span class="text-orange-500">
+                        <%=patient.email%>
+                    </span>
+                </h1>
+                <h1>Age: <span class="text-orange-500">
+                        <%=patient.age%>
+                </h1>
+                <h2>Gender: <span class="text-orange-500">
+                        <%=patient.gender%>
+                </h2>
+                <h1>Phone Number: </h1>
+                <h1>Address: </h1>
+
+
+            </div>
+            <div style="font-family: 'Unkempt" class=" w-96 p-4 text-2xl">
+                <a href="/logout" class="mt-5 bg-yellow-400 p-2 rounded-lg hover:bg-yellow-500 font-semibold">Logout</a>
+            </div>
+
+        </div>
+</body>
+
+</html>
